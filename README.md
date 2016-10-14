@@ -17,7 +17,7 @@ CREATE KEYSPACE clickathon
 CREATE TABLE clickathon.points (
   username text,
   event_time timestamp,
-  points int,
+  points tinyint,
   PRIMARY KEY (username,event_time)
 );
 ```

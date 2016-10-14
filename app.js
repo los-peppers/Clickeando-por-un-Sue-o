@@ -44,7 +44,7 @@ io.on('connection', function (socket) {
   socket.on('send-points', function(points) {
     username = connectionUsernameMap[socket.id];
     eventTime = Date.now();
-    cassandraClient.execute(insertQuery, [username, eventTime, points], function (err) {
+    cassandraClient.execute(insertQuery, [username, eventTime, points], { prepare : true }, function (err) {
       if (err != null) {
         console.error(err);
       }
@@ -66,7 +66,7 @@ function startLeaderBoardsUpdates() {
     });
     var referenceTime = new Date();
     referenceTime.setSeconds(referenceTime.getSeconds() - 5);
-    cassandraClient.execute(recentQuery, [referenceTime], function (err, res) {
+    cassandraClient.execute(recentQuery, [referenceTime], { prepare : true }, function (err, res) {
       if (err != null) {
         return console.error(err);
       }
