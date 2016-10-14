@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  entrynode:
+    image: cassandra:3.9
+    ports:
+      - "9042:9042"
+      - "9160:9160"
+      - "9142:9142"
+  workernode:
+    image: cassandra:3.9
+    links:
+      - entrynode:entrynode
+    environment:
+      - CASSANDRA_SEEDS=entrynode
+     
