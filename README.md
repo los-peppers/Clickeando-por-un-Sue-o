@@ -1,3 +1,11 @@
+## Check the cluster status
+
+Before setting up the database check the cluster status with the command:
+
+```sh
+nodetool status
+```
+
 ## Database setup
 
 Create the required keyspace and tables:
