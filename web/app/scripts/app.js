@@ -13,11 +13,28 @@ angular
     'ngAnimate',
     'ngResource',
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    // Socket IO
+    'btford.socket-io'
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+      .when('/game', {
+        templateUrl: 'views/game.html',
+        controller: 'GameCtrl',
+        controllerAs: 'game'
+      })
+      .when('/leaderboards', {
+        templateUrl: 'views/leaderboards.html',
+        controller: 'LeaderboardsCtrl',
+        controllerAs: 'leaderboards'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
       });
   });

@@ -1,0 +1,14 @@
+<div class="score">
+  <h1>Clicks/sec: {{points.interval}}</h1>
+  <h3>Session: {{points.session}}</h3>
+  <h3>User: <span class="label label-default">{{username}}</span></h3>
+</div>
+<div class="gamepad">
+  <a id="button" ng-click="onPointsClick()">
+    <span class="unselectable">Press!</span>
+  </a>
+  <audio preload="auto">
+    <source src="https://github.com/nclud/2011.beercamp.com/blob/gh-pages/audio/inception.mp3?raw=true" type="audio/mp3" />
+    <source src="https://github.com/nclud/2011.beercamp.com/blob/gh-pages/audio/inception.ogg?raw=true" type="audio/ogg" />
+  </audio>
+</div>
