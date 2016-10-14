@@ -43,6 +43,9 @@ io.on('connection', function (socket) {
   // Point insertion
   socket.on('send-points', function(points) {
     username = connectionUsernameMap[socket.id];
+    if (username == undefined) {
+      return;
+    }
     eventTime = Date.now();
     cassandraClient.execute(insertQuery, [username, eventTime, points], { prepare : true }, function (err) {
       if (err != null) {
