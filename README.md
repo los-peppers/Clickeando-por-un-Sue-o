@@ -6,15 +6,10 @@ Create the required keyspace and tables:
 CREATE KEYSPACE clickathon
   WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
 
-CREATE TABLE clickathon.users (
-  id UUID PRIMARY KEY,
-  name text
-);
-
 CREATE TABLE clickathon.points (
-  user_id UUID,
+  username text,
   event_time timestamp,
   points tinyint,
-  PRIMARY KEY (user_id,event_time)
+  PRIMARY KEY (username,event_time)
 );
 ```
