@@ -1,7 +1,12 @@
-#leaders-global {
-  height: 50%;
+/* ----------- Non-Retina Screens ----------- */
+@media (min-width:961px)  {
+  tbody {
+    font-size: 30px;
+  }
+
+  thead {
+    font-size: 35px;
+  }
 }
 
-#leaders-interval {
-  height: 50%;
-}
+

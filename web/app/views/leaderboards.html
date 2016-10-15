@@ -1,36 +1,40 @@
-<div class="well">
-  <h2>5 seconds</h2>
-  <table class="table" id="leaders-interval">
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>User</th>
-      <th>Points</th>
-    </tr>
-    </thead>
-    <tbody ng-repeat="user in leaderboards.recent">
-    <tr>
-      <td>{{index}}</td>
-      <td>{{user.username}}</td>
-      <td>{{user.points}}</td>
-    </tr>
-    </tbody>
-  </table>
-  <h2>Global</h2>
-  <table class="table" id="leaders-global">
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>User</th>
-      <th>Points</th>
-    </tr>
-    </thead>
-    <tbody ng-repeat="user in leaderboards.global">
-    <tr>
-      <td>{{index}}</td>
-      <td>{{user.username}}</td>
-      <td>{{user.points}}</td>
-    </tr>
-    </tbody>
-  </table>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Last 5 secs</h2>
+    <table class="table" id="leaders-interval">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>User</th>
+        <th>Points</th>
+      </tr>
+      </thead>
+      <tbody ng-repeat="user in leaderboards.recent">
+      <tr>
+        <td>{{$index + 1}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.points}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h2>Last minute</h2>
+    <table class="table" id="leaders-global">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>User</th>
+        <th>Points</th>
+      </tr>
+      </thead>
+      <tbody ng-repeat="user in leaderboards.global">
+      <tr>
+        <td>{{$index + 1}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.points}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
